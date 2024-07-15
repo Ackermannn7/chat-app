@@ -8,7 +8,8 @@ import userRoutes from './routes/user.routes.js';
 
 import connectToDB from './db/connectToDB.js';
 
-const app = e();
+import { app, server } from './socket/socket.js';
+
 const PORT = process.env.PORT || 5000;
 
 configDotenv();
@@ -18,7 +19,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/messages', messageRoutes);
 app.use('/api/users', userRoutes);
 
-app.listen(PORT, () => {
+server.listen(PORT, () => {
   connectToDB();
   console.log(`Server running on port ${PORT}`);
 });
