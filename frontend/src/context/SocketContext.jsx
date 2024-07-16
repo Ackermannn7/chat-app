@@ -16,7 +16,7 @@ export const SocketContextProvider = ({ children }) => {
     if (authUser) {
       // http://localhost:5000 for development
       // https://chat-app-ilko.onrender.com/ for production
-      const socket = io('http://localhost:5000', {
+      const socket = io('https://chat-app-ilko.onrender.com/', {
         query: {
           userId: authUser._id,
         },
