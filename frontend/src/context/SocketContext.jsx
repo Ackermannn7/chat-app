@@ -15,7 +15,8 @@ export const SocketContextProvider = ({ children }) => {
   useEffect(() => {
     if (authUser) {
       // http://localhost:5000 for development
-      const socket = io('https://chat-app-ilko.onrender.com/', {
+      // https://chat-app-ilko.onrender.com/ for production
+      const socket = io('http://localhost:5000', {
         query: {
           userId: authUser._id,
         },

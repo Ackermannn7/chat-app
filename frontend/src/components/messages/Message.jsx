@@ -15,16 +15,16 @@ const Message = ({ message }) => {
   return (
     <div className={`chat ${chatClassName}`}>
       <div className='chat-image avatar'>
-        <div className='w-10 rounded-full'>
+        <div className='w-6 md:w-10 rounded-full'>
           <img src={profilePicture} alt='user avatar' />
         </div>
       </div>
       <div
-        className={`chat-bubble text-white pb-2 ${shakeClass} ${bubbleBgColor}`}
+        className={`chat-bubble min-h-[2.5em] text-white text-sm md:text-md ${shakeClass} ${bubbleBgColor}`}
       >
         {message.message}
       </div>
-      <div className='chat-footer opacity-50 text-xs flex gap-1 items-center'>
+      <div className='chat-footer opacity-50 text-xs flex gap-1 items-center text-white'>
         {new Date(message.createdAt).toLocaleTimeString('en-GB', {
           hour: '2-digit',
           minute: '2-digit',
