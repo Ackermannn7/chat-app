@@ -11,5 +11,10 @@ export default defineConfig({
         target: 'http://localhost:5000',
       },
     },
+    build: {
+      rollupOptions: {
+        external: ['react-router-dom'],
+      },
+    },
   },
 });
